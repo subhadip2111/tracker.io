@@ -1,0 +1,14 @@
+# Ignore compiled Java classes
+*.class
+
+# Ignore Node.js modules
+node_modules/
+
+# Ignore log files
+*.log
+dist
+# Ignore OS-specific files
+.DS_Store
+
+# Ignore sensitive configuration files
+config.ini

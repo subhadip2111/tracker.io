@@ -1,0 +1,57 @@
+{
+  "name": "activity-tracker",
+  "version": "1.0.0",
+  "description": "Cross-platform desktop application to track active apps, browser URLs, and usage time.",
+  "license": "MIT",
+  "maintainer": "Subhadip Shee <subhadipshee20010521@gmail.com>",
+  "main": "src/main.js",
+  "homepage": "https://work-history-io-i4jz.vercel.app/",
+  "author": {
+    "name": "Subhadip shee",
+    "email": "subhadipshee20010521@gmail.com"
+  },
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder",
+    "rebuild": "electron-rebuild"
+  },
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4",
+    "electron-rebuild": "^3.2.9"
+  },
+  "dependencies": {
+    "active-win": "^7.6.0",
+    "better-sqlite3": "^12.2.0",
+    "iconv-lite": "^0.7.0",
+    "moment": "^2.29.4"
+  },
+  "build": {
+    "appId": "com.example.activitytracker",
+    "productName": "Activity Tracker",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "assets/icons/radio.icns"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icons/radio.ico"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility",
+      "icon": "assets/icons/radio.png"
+    }
+  }
+}

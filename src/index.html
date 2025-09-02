@@ -1,0 +1,166 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>App Tracker</title>
+    <style>
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+        color: #fff;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        overflow-x: hidden;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        text-shadow: 0 0 10px #00f7ff, 0 0 20px #00eaff;
+      }
+
+      h3 {
+        margin-top: 20px;
+        font-size: 1.4rem;
+        color: #aaa;
+        text-shadow: 0 0 6px #ff00ff;
+      }
+
+      #current {
+        margin: 20px 0;
+        padding: 20px;
+        font-size: 1.2rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 20px rgba(0, 255, 255, 0.2);
+        width: 80%;
+        max-width: 800px;
+        text-align: center;
+        transform: perspective(600px) rotateX(5deg);
+        transition: transform 0.3s ease;
+      }
+
+      #current:hover {
+        transform: perspective(600px) rotateX(0deg) scale(1.03);
+      }
+
+      #logs {
+        margin-top: 20px;
+        width: 90%;
+        max-width: 900px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .log {
+        padding: 15px;
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 6px 15px rgba(255, 0, 255, 0.2),
+          inset 0 0 15px rgba(0, 255, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transform: perspective(600px) rotateY(-5deg);
+      }
+
+      .log:hover {
+        transform: perspective(600px) rotateY(0deg) scale(1.05);
+        box-shadow: 0 8px 25px rgba(0, 255, 255, 0.5),
+          inset 0 0 20px rgba(255, 0, 255, 0.2);
+      }
+
+      .log b {
+        font-size: 1.1rem;
+        color: #00eaff;
+        text-shadow: 0 0 5px #00f7ff, 0 0 10px #00eaff;
+      }
+
+      .timestamp {
+        font-size: 0.9rem;
+        color: #ccc;
+        margin-top: 8px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>⚡ App & Browser Tracker</h2>
+    <div id="current">Loading current activity...</div>
+    <h3>📝 Logs</h3>
+    <div id="logs"></div>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>App Tracker</title>
+    <style>
+      /* Previous styles (kept same) ... */
+
+      .controls {
+        margin: 20px 0;
+        display: flex;
+        gap: 15px;
+      }
+
+      .btn {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        color: #fff;
+        background: linear-gradient(135deg, #00eaff, #0077ff);
+        box-shadow: 0 6px 15px rgba(0, 238, 255, 0.5);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 238, 255, 0.8);
+      }
+
+      .btn.stop {
+        background: linear-gradient(135deg, #ff0044, #ff6600);
+        box-shadow: 0 6px 15px rgba(255, 0, 100, 0.5);
+      }
+
+      .btn.stop:hover {
+        box-shadow: 0 8px 20px rgba(255, 0, 100, 0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>⚡ App & Browser Tracker</h2>
+    <div id="current">Click Start to begin tracking...</div>
+
+    <!-- Buttons -->
+    <div class="controls">
+      <button id="startBtn" class="btn">▶ Start Tracking</button>
+      <button id="stopBtn" class="btn stop">⏹ Stop Tracking</button>
+    </div>
+
+    <h3>📝 Logs</h3>
+    <div id="logs"></div>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>
